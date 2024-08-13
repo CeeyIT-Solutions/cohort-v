@@ -7,13 +7,13 @@
     - name: Ensure apache is at the latest version
       ansible.builtin.apt:
         name: apache2
-        state: latest
+        state: present
         update_cache: true
 
     - name: Ensure git is the latest version
       ansible.builtin.apt:
         name: git
-        state: latest
+        state: present
 
     - name: Deploy Web Application
       ansible.builtin.git:
