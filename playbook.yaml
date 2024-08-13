@@ -5,16 +5,21 @@
   become: true
 
   tasks:
-    - name: Ensure apache is at the latest version
+    - name: Ensure apache is installed
       ansible.builtin.apt:
         name: apache2
         state: present
         update_cache: true
 
-    - name: Ensure git is the latest version
+    - name: Ensure git is installed
       ansible.builtin.apt:
         name: git
         state: present
+
+    - name: Clear the content of the deploy directory
+      ansible.builtin.file:
+        path: /var/www/html/*
+        state: absent
 
     - name: Deploy Web Application
       ansible.builtin.git:
