@@ -30,5 +30,3 @@
       ansible.builtin.git:
         repo: https://github.com/CeeyIT-Solutions/food3.git
         dest: /var/www/html
-        single_branch: true
-        version: ansible # This is the default branch for this project
