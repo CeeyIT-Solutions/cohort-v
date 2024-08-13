@@ -2,6 +2,7 @@
 - name: Deploy Web App
   hosts: node_1
   remote_user: ubuntu
+  become: true
 
   tasks:
     - name: Ensure apache is at the latest version
