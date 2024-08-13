@@ -1,0 +1,22 @@
+---
+- name: Deploy Web App
+  hosts: node_1
+  remote_user: ubuntu
+
+  tasks:
+    - name: Ensure apache is at the latest version
+      ansible.builtin.apt:
+        name: apache2
+        state: latest
+        update_cache: true
+
+    - name: Ensure git is the latest version
+      ansible.builtin.apt:
+        name: git
+        state: latest
+
+    - name: Deploy Web Application
+      ansible.builtin.git:
+        name: git
+        repo: https://github.com/CeeyIT-Solutions/food3.git
+        dest: /var/www/html
