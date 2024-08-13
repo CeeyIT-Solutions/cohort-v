@@ -19,3 +19,4 @@
       ansible.builtin.git:
         repo: https://github.com/CeeyIT-Solutions/food3.git
         dest: /var/www/html
+        version: ansible
